@@ -1,7 +1,26 @@
 <!-- public/views/home.html -->
 
 <div class="jumbotron text-center">
-	<h1>Home Page 4 Lyf</h1>
+	<h1>Home Page</h1>
 
 	<p>{{ tagline }}</p>
+</div>
+
+<!-- SEARCH
+<div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2">#</span>
+      <input type="text" class="form-control" placeholder="Hashtag">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search!</button>
+      </span>
+</div> -->
+
+<div ng-controller="MainController">
+	<form novalidate class="simple-form">
+		Search term: <input type="text" placeholder="#Hashtag" ng-model="givenTerm" />
+		<input placeholder="#Hashtag" type="submit" ng-click="update(givenTerm)" value="Search!" />
+	</form>
+	<br>
+	<pre>givenTerm = {{ givenTerm | json }}</pre>
+	<pre>searchedTerm = {{ searchedTerm | json }}</pre>
 </div>
